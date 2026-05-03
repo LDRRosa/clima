@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grpc.clima";
+
+service WeatherService {
+  rpc ObterTemperaturaAtual (CidadeRequest) returns (TemperaturaResponse);
+  rpc PrevisaoCincoDias (CidadeRequest) returns (PrevisaoResponse);
+  rpc ListarCidades (Empty) returns (ListaCidadesResponse);
+  rpc CadastrarCidade (NovaCidadeRequest) returns (StatusResponse);
+  rpc EstatisticasClimaticas (CidadeRequest) returns (EstatisticasResponse);
+}
+
+message Empty {}
+
+message CidadeRequest {
+  string nome = 1;
+}
+
+message NovaCidadeRequest {
+  string nome = 1;
+  float temperatura_inicial = 2;
+}
+
+message TemperaturaResponse {
+  string nome = 1;
+  float temperatura = 2;
+}
+
+message PrevisaoResponse {
+  repeated float temperaturas = 1; // Lista de 5 valores
+}
+
+message ListaCidadesResponse {
+  repeated string nomes = 1;
+}
+
+message StatusResponse {
+  string mensagem = 1;
+  bool sucesso = 2;
+}
+
+message EstatisticasResponse {
+  float media = 1;
+  float minima = 2;
+  float maxima = 3;
+}

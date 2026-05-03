@@ -80,3 +80,29 @@ O fluxo de processamento segue estas etapas:
 *   **gRPC**: Framework de RPC de alta performance.
 *   **Protocol Buffers**: Linguagem de interface e serialização.
 *   **Maven**: Automação de build e dependências.
+
+---
+
+## 📸 Demonstração (Testes no Postman)
+
+Abaixo estão as evidências do funcionamento dos endpoints REST integrados ao servidor gRPC:
+
+### 📍 Listar Cidades
+Retorna todas as cidades disponíveis no sistema.
+![Listar Cidades](./Prints/Listar.png)
+
+### 🌡️ Obter Temperatura Atual
+Busca a temperatura em tempo real de uma cidade específica.
+![Buscar Temperatura](./Prints/Buscar-Temperatura.png)
+
+### 📅 Previsão de 5 Dias
+Retorna uma lista de temperaturas simuladas para os próximos dias.
+![Buscar Previsão](./Prints/Buscar-Previsão.png)
+
+### 📊 Estatísticas Climáticas
+Exibe a média, mínima e máxima registradas para a cidade.
+![Buscar Estatísticas](./Prints/Buscar-estatisticas.png)
+
+### 🆕 Cadastrar Nova Cidade
+Adiciona uma nova localidade ao banco de dados em memória.
+![Criar Cidade](./Prints/Criar.png)
